@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+
+<h1>Razor View Engine </h1>
+<h2>Razor View Engine Kullanımı</h2>
+
+@{
+    string firsName = "John";
+    string lastName = "Doe";
+    int age = 30;
+}
+
+<br />
+<p><b>Razor View Engine ile Değişken Çağırma</b></p>
+<p><b>@firsName</b> @lastName - @age</p>
+<br />
+<hr />
+<h2>Karar Yapıları</h2>
+
+@{
+    int number = 15;
+
+}
+@{
+    if (number < age)
+    {
+        <span>Sayı Değeri : (<b>@number</b>) , Yaş Değerinden (<b>@age</b>) Küçüktür.</span>
+    }
+    else if (number > age)
+    {
+        <span>Sayı Değeri : (<b>@number</b>) , Yaş Değerinden (<b>@age</b>) Büyüktür.</span>
+    }
+    else
+    {
+        <span>Sayı Değeri : (<b>@number</b>) , Yaş Değerine (<b>@age</b>) Eşittir.</span>
+    }
+
+
+}
+<br />
+<hr />
+<h2>Döngüler ve Kolleksiyonlar</h2>
+@{
+    string[] names = { "John", "Jeyn", "Tom", "Poul","Jack"};
+    string surName = "Doe";
+}
+
+<h6>For Döngüsü</h6>
+@for(int i=0;i<names.Length;i++){
+            <p>@names[i] <b>@surName</b></p>
+}
+
+<h6>ForEach</h6>
+<ul>
+    @foreach (var item in names)
+    {
+        <li>@item <b>@surName</b></li>
+    }
+
+</ul>
+
+<br />
+<hr />
+<h2>Ternary if Kullanımı</h2>
+
+@(11>10 ? "True ise yazılacak ifade" : "False ise yazılacak ifade")
+
+
